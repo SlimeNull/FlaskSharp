@@ -5,12 +5,14 @@ Simple, Easy and Lightweight web framework.\
 
 ## Usage
 
-Create a new FlaskApp.
+Create a new FlaskApp. \
+创建一个新的 Flask 应用程序.
 
 ```csharp
 class MyFlaskApp : FlaskApp
 {
     // Use FlaskRoute attribute to handle request
+    // 使用 FlaskRoute 特性来处理请求
     [FlaskRoute("/api/get_age")]
     public string GetAge(int birthYear)
     {
@@ -20,7 +22,8 @@ class MyFlaskApp : FlaskApp
 }
 ```
 
-Run the FlaskApp.
+Run the FlaskApp. \
+启动 Flask 应用程序
 
 ```csharp
 MyFlaskApp app = new MyFlaskApp();
