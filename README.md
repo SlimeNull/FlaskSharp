@@ -1,7 +1,7 @@
 # FlaskSharp
 
 Simple, Easy and Lightweight web framework.\
-¼òµ¥, Ò×ÓÃÇÒÇáÁ¿µÄ Web ¿ò¼Ü.
+ç®€å•, æ˜“ç”¨ä¸”è½»é‡çš„ Web æ¡†æ¶.
 
 ## Usage
 
