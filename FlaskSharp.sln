@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlaskSharp", "FlaskSharp\FlaskSharp.csproj", "{56E394FE-85C6-4DD9-A4A4-F9D3E1B6CDA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole", "TestConsole\TestConsole.csproj", "{4BC97BAD-380D-418D-B98E-6BEC8E545136}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56E394FE-85C6-4DD9-A4A4-F9D3E1B6CDA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56E394FE-85C6-4DD9-A4A4-F9D3E1B6CDA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56E394FE-85C6-4DD9-A4A4-F9D3E1B6CDA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56E394FE-85C6-4DD9-A4A4-F9D3E1B6CDA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BC97BAD-380D-418D-B98E-6BEC8E545136}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BC97BAD-380D-418D-B98E-6BEC8E545136}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BC97BAD-380D-418D-B98E-6BEC8E545136}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BC97BAD-380D-418D-B98E-6BEC8E545136}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {631F7853-6818-44FA-82FE-A060BDE85AD0}
+	EndGlobalSection
+EndGlobal
