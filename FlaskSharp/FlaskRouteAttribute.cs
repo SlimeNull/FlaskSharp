@@ -1,4 +1,6 @@
-﻿    namespace FlaskSharp
+﻿using System;
+
+namespace FlaskSharp
 {
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
     public sealed class FlaskRouteAttribute : Attribute

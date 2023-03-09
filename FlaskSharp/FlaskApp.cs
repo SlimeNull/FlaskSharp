@@ -1,9 +1,13 @@
-﻿using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Reflection;
 using System.Text;
 using System.Text.Json;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace FlaskSharp
 {
@@ -16,7 +20,7 @@ namespace FlaskSharp
 
         private readonly List<FlaskRouteMethod> flaskRouteMethods;
 
-        record FlaskRouteMethod(MethodInfo Method, ParameterInfo[] Parameters, FlaskRouteAttribute Attribute);
+        record struct FlaskRouteMethod(MethodInfo Method, ParameterInfo[] Parameters, FlaskRouteAttribute Attribute);
 
         public FlaskApp()
         {

@@ -11,11 +11,17 @@ namespace FlaskSharp
     {
         public static bool TryGetRequestInformation(
             string request,
+#if NET6_0_OR_GREATER
             [NotNullWhen(true)] out string? method,
             [NotNullWhen(true)] out string? url,
             [NotNullWhen(true)] out string? version)
+#else
+            out string method,
+            out string url,
+            out string version)
+#endif
         {
-            method = url = version = null;
+            method = url = version = null!;
 
             int methodEnd = request.IndexOf(' ');
             if (methodEnd == -1)

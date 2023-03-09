@@ -1,4 +1,6 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace FlaskSharp
 {
@@ -9,10 +11,6 @@ namespace FlaskSharp
         }
 
         public HttpHeaders(IDictionary<string, string> dictionary) : base(dictionary)
-        {
-        }
-
-        public HttpHeaders(IEnumerable<KeyValuePair<string, string>> collection) : base(collection)
         {
         }
 
@@ -28,10 +26,6 @@ namespace FlaskSharp
         {
         }
 
-        public HttpHeaders(IEnumerable<KeyValuePair<string, string>> collection, IEqualityComparer<string>? comparer) : base(collection, comparer)
-        {
-        }
-
         public HttpHeaders(int capacity, IEqualityComparer<string>? comparer) : base(capacity, comparer)
         {
         }
@@ -40,6 +34,18 @@ namespace FlaskSharp
         {
 
         }
+
+#if NET6_0_OR_GREATER
+
+        public HttpHeaders(IEnumerable<KeyValuePair<string, string>> collection) : base(collection)
+        {
+        }
+
+        public HttpHeaders(IEnumerable<KeyValuePair<string, string>> collection, IEqualityComparer<string>? comparer) : base(collection, comparer)
+        {
+        }
+
+#endif
 
         public string Host
         {

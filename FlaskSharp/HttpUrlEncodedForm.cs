@@ -1,4 +1,6 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace FlaskSharp
@@ -18,14 +20,6 @@ namespace FlaskSharp
         {
         }
 
-        public HttpUrlEncodedForm(IEnumerable<KeyValuePair<string, string>> collection) : base(collection)
-        {
-        }
-
-        public HttpUrlEncodedForm(IEnumerable<KeyValuePair<string, string>> collection, IEqualityComparer<string>? comparer) : base(collection, comparer)
-        {
-        }
-
         public HttpUrlEncodedForm(IEqualityComparer<string>? comparer) : base(comparer)
         {
         }
@@ -42,13 +36,28 @@ namespace FlaskSharp
         {
         }
 
+#if NET6_0_OR_GREATER
+
+        public HttpUrlEncodedForm(IEnumerable<KeyValuePair<string, string>> collection) : base(collection)
+        {
+        }
+
+        public HttpUrlEncodedForm(IEnumerable<KeyValuePair<string, string>> collection, IEqualityComparer<string>? comparer) : base(collection, comparer)
+        {
+        }
+
+#endif
+
+
+        private static readonly char[] eqSplitor = new[]{ '=' };
+
         public static HttpUrlEncodedForm FromFormString(string formString)
         {
             var form = new HttpUrlEncodedForm();
             var pairs = formString.Split('&');
             foreach (var pair in pairs)
             {
-                var keyValue = pair.Split('=', 2);
+                var keyValue = pair.Split(eqSplitor, 2);
                 if (keyValue.Length != 2)
                     continue;
 
@@ -60,9 +69,10 @@ namespace FlaskSharp
         public void PopulateFromFormString(string formString)
         {
             var pairs = formString.Split('&');
+
             foreach (var pair in pairs)
             {
-                var keyValue = pair.Split('=', 2);
+                var keyValue = pair.Split(eqSplitor, 2);
                 if (keyValue.Length != 2)
                     continue;
 

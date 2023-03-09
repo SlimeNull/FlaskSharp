@@ -1,4 +1,6 @@
-﻿namespace FlaskSharp
+﻿using System;
+
+namespace FlaskSharp
 {
     [Flags]
     public enum HttpMethod

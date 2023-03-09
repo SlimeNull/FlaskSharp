@@ -1,4 +1,8 @@
-﻿namespace FlaskSharp
+﻿using System;
+using System.IO;
+using System.Threading.Tasks;
+
+namespace FlaskSharp
 {
     public class HttpResponse : HttpMessage
     {
@@ -13,7 +17,12 @@
         internal HttpResponse(HttpStatus status, string? message)
         {
             Status = status;
+
+#if NET6_0_OR_GREATER
             Message = message ?? Enum.GetName<HttpStatus>(status) ?? string.Empty;
+#else
+            Message = message ?? Enum.GetName(typeof(HttpStatus), status) ?? string.Empty;
+#endif
         }
 
         public HttpStatus Status
@@ -22,7 +31,12 @@
             set
             {
                 status = value;
+
+#if NET6_0_OR_GREATER
                 Message = Enum.GetName(value) ?? Message;
+#else
+                Message = Enum.GetName(typeof(HttpStatus), value) ?? Message;
+#endif
             }
         }
 

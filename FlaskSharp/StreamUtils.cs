@@ -1,4 +1,7 @@
-﻿namespace FlaskSharp
+﻿using System.IO;
+using System.Threading.Tasks;
+
+namespace FlaskSharp
 {
     internal static class StreamUtils
     {
